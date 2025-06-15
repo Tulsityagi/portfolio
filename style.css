@@ -722,6 +722,9 @@ h3.my-profession{
     height: 50px;
     padding: 0 50px;
 }
+#msg{
+    color: var(--skin-color);
+}
 @media (max-width:1199px)
 {
     .section .container{

@@ -46,7 +46,7 @@
                         <h3 class="my-profession">I'm a <span class="typing">Graphics Designer</span></h3>
                         <p>I am a passionate and dedicated Software Engineer with a strong foundation in Python, c++, and web development. 
                             I have experience working on projects involving full-stack development, data structures & algorithms, and machine learning concepts.</p>
-                            <a href="" class="btn">Download CV</a>
+                            <a href="tulsityagi-resume.pdf" download class="btn">Download CV</a>
                     </div>
                     
                     <div class="home-img padd-15">
@@ -272,37 +272,43 @@ This internship is helping me grow professionally by combining creativity with t
                         <h2>My last projects:</h2>
                     </div>
                 </div>
-                <div class="row">
+            <div class="row">
 
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner shadow-dark">
-                          <div class="portfolio-img">
-                            <img src="Untitled-13.png" alt="">
-                          </div>
+  <!-- Project 1 -->
+  <div class="portfolio-item padd-15">
+    <a href="https://github.com/Tulsityagi/TimeTable-Generator" target="_blank" style="display: block;">
+      <div class="portfolio-item-inner shadow-dark">
+        <div class="portfolio-img">
+          <img src="Untitled-13.png" alt="TimeTable Generator Project">
+        </div>
+      </div>
+    </a>
+  </div>
 
-                        </div>
-                    </div>
+  <!-- Project 2 -->
+  <div class="portfolio-item padd-15">
+    <a href="https://github.com/Tulsityagi/Delhi-Metro-Network-Analysis-and-Optimization" target="_blank" style="display: block;">
+      <div class="portfolio-item-inner shadow-dark">
+        <div class="portfolio-img">
+          <img src="Untitled-1q.png" alt="Delhi Metro Optimization">
+        </div>
+      </div>
+    </a>
+  </div>
 
-                        <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner shadow-dark">
-                          <div class="portfolio-img">
-                            <img src="Untitled-1q.png" alt="">
-                          </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item padd-15">
-                        <div class="portfolio-item-inner shadow-dark">
-                          <div class="portfolio-img">
-                            <img src="Untitled-1.png" alt="">
-                          </div>
+  <!-- Project 3 -->
+  <div class="portfolio-item padd-15">
+    <a href="https://github.com/Tulsityagi/portfolio" target="_blank" style="display: block;">
+      <div class="portfolio-item-inner shadow-dark">
+        <div class="portfolio-img">
+          <img src="Untitled-1.png" alt="Personal Portfolio Project">
+        </div>
+      </div>
+    </a>
+  </div>
 
-                        </div>
-                    </div>
+</div>
 
-
-
-
-                </div>
              </div>
 
                 </section>
@@ -355,44 +361,36 @@ This internship is helping me grow professionally by combining creativity with t
 
                    <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
                    <h4 class="contact-sub-title padd-15">I'm VERY RESPONSIVE TO MESSAGES</h4>
-                   <div class="row">
-                    <div class="contact-form padd-15">
-                         <div class="row">
-                            <div class="form-item col-6 padd-15">
-                                <div class="form-group">
+                    <div class="row">
+  <div class="contact-form padd-15">
+    <!-- ✅ Add the missing form tag -->
+    <form name="submit-to-google-sheet">
+      <div class="row">
+        <div class="form-item col-6 padd-15">
+          <div class="form-group">
+            <input type="text" name="Name" class="form-control" placeholder="Name" required>
+          </div>
+        </div>
+        <div class="form-item col-6 padd-15">
+          <div class="form-group">
+            <input type="email" name="Email" class="form-control" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="form-item col-12 padd-15">
+          <div class="form-group">
+            <textarea name="Message" class="form-control" id="" placeholder="message"></textarea>
+          </div>
+        </div>
+        <div class="form-item col-12 padd-15">
+          <button type="submit" class="btn">send message</button>
+        </div>
+      </div>
+    </form>
+     <span id="msg"></span>
+    <!-- ✅ End of form -->
+  </div>
+</div>
 
-                                    <input type="text" name="Name" class="form-control" placeholder="Name" required>
-                                </div>
-                            </div>
-                            <div class="form-item col-6 padd-15">
-                                <div class="form-group">
-                                    <input type="email" name="Email" class="form-control" placeholder="Email" required>
-                                </div>
-                            </div>
-
-                                <div class="form-item col-12 padd-15">
-                                <div class="form-group">
-
-                                    <input type="text" name="Subject" class="form-control" placeholder="Subject" required>
-                                </div>
-                            </div> 
-                                <div class="form-item col-12 padd-15">
-                                <div class="form-group">
-
-                                    <textarea name="message" class="form-control" id="" placeholder="message"></textarea>
-                                </div>
-                            </div>
-                                <div class="form-item col-12 padd-15">
-                                <button type="submit" class="btn">send message</button>
-                            </div>
-                            
-
-                         </div>
-
-                    
-
-                    </div>
-                   </div>
              </div>
 
          </section>
@@ -421,6 +419,22 @@ This internship is helping me grow professionally by combining creativity with t
 
     
     <script src="style-switcher.js"></script>
-
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxFcKBGLSHFnqXEQk8G-4luTu4Ut0tfHhlnTisoRzu4GVUvgMpnNIna4Ps3Oh7XYi80Ig/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg= document.getElementById("msg")
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+           msg.innerHTML="Message Sent successfully..."
+           setTimeout(function(){
+            msg.innerHTML=""
+           },5000)
+           form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
